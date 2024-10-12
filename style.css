@@ -331,3 +331,60 @@ section h1 {
     display: flex;
     flex-direction: row;
 }
+/* J'ai travaillé sur un écran plus large et donc pour les plus petit je devais réduire la taille de la police et des éléments pour que cela reste lisible. J'ai donc ajouté un media query pour les écrans de moins de 1600px. */
+@media screen and (max-width: 1600px) {
+    * {
+        font-size: 0.9rem;
+    }
+
+    #title {
+        font-size: 3rem;
+    }
+
+    #meCard img {
+        width: 5rem;
+    }
+
+    #meCard h1 {
+        font-size: 0.8rem;
+    }
+
+    #meCard p {
+        font-size: 0.6rem;
+    }
+
+    .infoCard h2 {
+        font-size: 0.8rem;
+    }
+
+    .infoCard p {
+        font-size: 0.6rem;
+    }
+
+    .languages {
+        width: 60%;
+    }
+
+    .languages .level h1 {
+        font-size: 0.8rem;
+    }
+
+    .languages .level p {
+        font-size: 0.8rem;
+    }
+
+    #programming .level h2 {
+        font-size: 1rem;
+    }
+    
+    .card {
+        max-width: 17rem;
+        max-height: 10rem;
+
+    }
+
+    .card .description {
+        font-size: 0.7rem;
+    }
+
+}
