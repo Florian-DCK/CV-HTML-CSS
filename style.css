@@ -1,0 +1,333 @@
+:root {
+    --background-color: #2d2c36;
+    --background-color-light: #373642;
+    --accent-color: #fdb93a;
+    --text-color: #ffffff; /* Couleur principale du texte */
+    --text-color-light: #999999; /* Couleur du texte clair */
+}
+
+.lato-regular {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.lato-bold {
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.lato-black {
+    font-family: "Lato", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+}
+
+body {
+    background-color: #18171f;
+    color: var(--text-color); 
+    display: flex;
+}
+
+#title{
+    font-size: 5rem;
+    font-weight: 900;
+    color: var(--text-color); 
+    margin-left: 2vw;
+    margin-top: 2vh;
+
+}
+
+#title::after {
+    content: "";
+    display: block;
+    width: 40%;
+    height: 0.4rem;
+    background-color: var(--accent-color);
+    border-radius: 50px;
+}
+
+aside {
+    height: 90vh;
+    background-color: var(--background-color-light);
+    border-radius: 10px 0px 0px 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin: 20px;
+    margin-right: 0;
+    color: var(--text-color-light); 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 10vw;
+    max-width: 20vw;
+
+    flex: 1;
+
+    padding-bottom: 0;
+}
+
+#meCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+#meCard img {
+    width: 7rem;
+    border-radius: 50%;
+    transform: rotate(-10deg);
+    border: solid 0.2rem var(--accent-color);
+}
+
+#meCard h1 {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    font-weight: 900;
+    color: var(--text-color); 
+}
+
+#meCard p {
+    font-size: 0.8rem;
+    text-align: center;
+    margin-top: 0.5rem;
+    line-height: 1.5;
+    color: var(--text-color-light); 
+    padding-bottom: 20px;
+}
+
+#competenceCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border-radius: 0 10px 0 10px;
+    background-color: var(--background-color);
+    padding-top: 20px;
+    padding-bottom: 10px;
+    flex: 1;
+}
+
+.infoCard {
+    display: flex;
+    flex-direction: row;
+    color: var(--text-color); 
+    width: 80%;
+    justify-content: space-between;
+}
+
+.infoCard h2 {
+    font-size: 1rem;
+    font-weight: 900;
+    margin: 0.5rem;
+    color: var(--text-color); 
+}
+
+.infoCard p {
+    font-size: 0.8rem;
+    margin: 0.5rem;
+    color: var(--text-color-light); 
+}
+
+hr {
+    width: 80%;
+    margin: 10px;
+    border: 0;
+    height: 1px;
+    background: var(--background-color-light);
+}
+
+.languages {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 50%;
+}
+
+.languages .level{
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+
+.languages .level h1 {
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+.languages .level p {
+    font-size: 1rem;
+    color: var(--text-color);
+    border: solid 0.2rem var(--accent-color);
+    border-radius: 50%;
+    padding: 20px;
+
+    margin-bottom: 1rem;
+}
+
+#programming {
+    flex-direction: column;
+    width: 80%;
+    padding: 20px;
+    position: relative;
+}
+
+#programming .level {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    padding: 10px;
+}
+#programming .level h2{
+    font-size: 1.2rem;
+}
+
+#programming .levelInfos{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 8px;
+}
+
+.bar{
+    background-color: var(--accent-color);
+    width: 50%;
+    height: 0.4rem;
+    border-radius: 10px;
+    display: flex;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    
+}
+
+.barEmpty{
+    background-color: #18171f;
+    width: 100%;
+    height: 0.4rem;
+    border-radius: 10px;
+    display: flex;
+    position: absolute;
+    z-index: 0;
+    left: 0;
+}
+
+.bar#HTML{
+    width: 80%;
+}
+
+.bar#CSS{
+    width: 70%;
+}
+
+.bar#JS{
+    width: 50%;
+}
+
+.bar#PHP{
+    width: 10%;
+}
+
+main{
+    background-color: var(--background-color-light);
+    width: 100%;
+    flex: 3;
+    margin: 20px;
+    margin-left: 0;
+    margin-right: 0;
+    display: flex;
+    position: relative;
+}
+
+.overview {
+    position: absolute;
+    bottom: 1vh;
+    left: 2vw;
+}
+
+section h1 {
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--text-color); 
+    margin-left: 2vw;
+    margin-top: 4rem;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: relative;
+
+    width: 20rem;
+    padding: 20px;
+    margin: 10px;
+    background-color: var(--background-color);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin-left: 2rem;
+    margin-top: 1rem;
+}
+
+.card:hover {
+    transform: scale(1.02);
+    transition: transform 0.5s;
+}
+
+.card h2 {
+    align-self: flex-start;
+    color: var(--accent-color);
+}
+
+.card h2::after {
+    content: "";
+    display: block;
+    width: 40%;
+    height: 0.2rem;
+    background-color: currentColor;
+    margin-top: 0.2rem;
+    border-radius: 50px;
+}
+
+.card .entreprise {
+    align-self: flex-start;
+    color: var(--text-color);
+    margin-top: 0.3rem;
+    margin-bottom: 0.3rem;
+}
+
+.card .description {
+    color: var(--text-color-light);
+    margin-top: 0.5rem;
+}
+
+.card .date {
+    color: var(--accent-color);
+    margin-top: 0.5rem;
+    margin-top: auto;
+    align-self: flex-end;
+}
+
+#formation {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+#experience {
+    display: flex;
+    flex-direction: row;
+}
