@@ -1,11 +1,3 @@
-:root {
-    --background-color: #2d2c36;
-    --background-color-light: #373642;
-    --accent-color: #fdb93a;
-    --text-color: #ffffff; /* Couleur principale du texte */
-    --text-color-light: #999999; /* Couleur du texte clair */
-}
-
 .lato-regular {
     font-family: "Lato", sans-serif;
     font-weight: 400;
@@ -24,367 +16,263 @@
     font-style: normal;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    font-family: "Lato", sans-serif;
-    font-weight: 700;
+:root {
+    --background-color: #2d2c36;
+    --background-color-light: #373642;
+    --accent-color: #fdb93a;
+    --accent-color-light: #f3b94e;
+    --text-color: #ffffff;
+    --text-color-light: #999999;
+    --font-family: 'Lato', sans-serif;
 }
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* 
+Style global
+*/
 
 body {
     background-color: #18171f;
-    color: var(--text-color); 
-    display: flex;
+    color: var(--text-color);
+    font-family: var(--font-family);
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: minmax(400px, 1fr) 3fr;
 }
 
-#title{
-    font-size: 5rem;
+h1 {
+    font-size: 2.5rem;
     font-weight: 900;
-    color: var(--text-color); 
-    margin-left: 2vw;
-    margin-top: 2vh;
-
+    margin-bottom: 20px;
 }
 
-#title::after {
-    content: "";
-    display: block;
-    width: 40%;
-    height: 0.4rem;
-    background-color: var(--accent-color);
+h1::after {
+    content: '';
+    display: inline-block;
+    width: 0.8em;
+    height: 3px;
     border-radius: 50px;
+    background-color: var(--accent-color);
+    animation: blink 1.5s step-end infinite;
+
+    margin-left: 10px;
 }
 
-aside {
-    height: 90vh;
-    background-color: var(--background-color-light);
-    border-radius: 10px 0px 0px 10px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    margin: 20px;
-    margin-right: 0;
-    color: var(--text-color-light); 
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-width: 10vw;
-    max-width: 20vw;
-
-    flex: 1;
-
-    padding-bottom: 0;
+h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
 }
 
-#meCard {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
+h2::after {
+    content: ":";
+    color: var(--accent-color);
+    animation: blink 1.5s step-end infinite;
 }
 
-#meCard img {
-    width: 7rem;
-    border-radius: 50%;
-    transform: rotate(-10deg);
-    border: solid 0.2rem var(--accent-color);
+section {
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fill, minmax(300px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
 }
 
-#meCard h1 {
-    font-size: 1rem;
-    margin-top: 0.5rem;
-    font-weight: 900;
-    color: var(--text-color); 
-}
+strong {
+    background: var(--accent-color);
+    padding-left: 5px;
+    padding-right: 5px;
+    color: #18171f;
 
-#meCard p {
-    font-size: 0.8rem;
-    text-align: center;
-    margin-top: 0.5rem;
-    line-height: 1.5;
-    color: var(--text-color-light); 
-    padding-bottom: 20px;
-}
-
-#competenceCard {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    border-radius: 0 10px 0 10px;
-    background-color: var(--background-color);
-    padding-top: 20px;
-    padding-bottom: 10px;
-    flex: 1;
-}
-
-.infoCard {
-    display: flex;
-    flex-direction: row;
-    color: var(--text-color); 
-    width: 80%;
-    justify-content: space-between;
-}
-
-.infoCard h2 {
-    font-size: 1rem;
-    font-weight: 900;
-    margin: 0.5rem;
-    color: var(--text-color); 
-}
-
-.infoCard p {
-    font-size: 0.8rem;
-    margin: 0.5rem;
-    color: var(--text-color-light); 
+    border-radius: 5px;
 }
 
 hr {
-    width: 80%;
-    margin: 10px;
     border: 0;
-    height: 1px;
+    height: 3px;
     background: var(--background-color-light);
+    margin: 40px 20px 40px 0;
 }
 
-.languages {
+
+
+/* 
+Style des composants du main
+*/
+
+.wrapper-main {
+    background-color: var(--background-color);
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 50%;
-}
-
-.languages .level{
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
-}
-
-.languages .level h1 {
-    font-size: 1rem;
-    color: var(--text-color);
-}
-
-.languages .level p {
-    font-size: 1rem;
-    color: var(--text-color);
-    border: solid 0.2rem var(--accent-color);
-    border-radius: 50%;
-    padding: 20px;
-
-    margin-bottom: 1rem;
-}
-
-#programming {
     flex-direction: column;
-    width: 80%;
+    max-width: 100vw;
+    min-height: 95vh;
+    margin: 20px 0 20px 20px;
+
+    border-radius: 15px 0 0 15px;
+
     padding: 20px;
-    position: relative;
-}
-
-#programming .level {
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
-    padding: 10px;
-}
-#programming .level h2{
-    font-size: 1.2rem;
-}
-
-#programming .levelInfos{
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    margin-bottom: 8px;
-}
-
-.bar{
-    background-color: var(--accent-color);
-    width: 50%;
-    height: 0.4rem;
-    border-radius: 10px;
-    display: flex;
-    position: absolute;
-    z-index: 1;
-    left: 0;
-    
-}
-
-.barEmpty{
-    background-color: #18171f;
-    width: 100%;
-    height: 0.4rem;
-    border-radius: 10px;
-    display: flex;
-    position: absolute;
-    z-index: 0;
-    left: 0;
-}
-
-.bar#HTML{
-    width: 80%;
-}
-
-.bar#CSS{
-    width: 70%;
-}
-
-.bar#JS{
-    width: 50%;
-}
-
-.bar#PHP{
-    width: 10%;
-}
-
-main{
-    background-color: var(--background-color-light);
-    width: 100%;
-    flex: 3;
-    margin: 20px;
-    margin-left: 0;
-    margin-right: 0;
-    display: flex;
-    position: relative;
-}
-
-.overview {
-    position: absolute;
-    bottom: 1vh;
-    left: 2vw;
-}
-
-section h1 {
-    font-size: 2rem;
-    font-weight: 900;
-    color: var(--text-color); 
-    margin-left: 2vw;
-    margin-top: 4rem;
 }
 
 .card {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    position : relative;
 
-    position: relative;
+    background-color: var(--background-color-light);
+    padding: 15px;
+    border-radius: 12px;
 
-    width: 20rem;
-    padding: 20px;
-    margin: 10px;
-    background-color: var(--background-color);
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    margin-left: 2rem;
-    margin-top: 1rem;
+    max-width: 400px;
+    min-height: 150px;
 }
 
-.card:hover {
-    transform: scale(1.02);
-    transition: transform 0.5s;
-}
-
-.card h2 {
-    align-self: flex-start;
+.card .name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
     color: var(--accent-color);
 }
 
-.card h2::after {
-    content: "";
+.card .name::after {
+    content: '';
     display: block;
-    width: 40%;
-    height: 0.2rem;
-    background-color: currentColor;
-    margin-top: 0.2rem;
+    width: 50%;
+    height: 3px;
     border-radius: 50px;
+    background-color: var(--accent-color);
+    margin-top: 5px;
 }
 
 .card .entreprise {
-    align-self: flex-start;
-    color: var(--text-color);
-    margin-top: 0.3rem;
-    margin-bottom: 0.3rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 10px;
 }
 
 .card .description {
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 20px;
     color: var(--text-color-light);
-    margin-top: 0.5rem;
 }
 
 .card .date {
+    font-size: 0.8rem;
+    font-weight: 800;
     color: var(--accent-color);
-    margin-top: 0.5rem;
-    margin-top: auto;
-    align-self: flex-end;
+
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
 }
 
-#formation {
+/* 
+Style des composants du side
+*/
+
+.wrapper-side {
+    background-color: var(--background-color);
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: column;
+    min-height: 95vh;
+    margin: 20px 0 20px 0;
+
+    border-radius: 0 15px 15px 0;
 }
 
-#experience {
+#profile {
     display: flex;
-    flex-direction: row;
+    align-items: center;
 }
-/* J'ai travaillé sur un écran plus large et donc pour les plus petit je devais réduire la taille de la police et des éléments pour que cela reste lisible. J'ai donc ajouté un media query pour les écrans de moins de 1600px. */
-@media screen and (max-width: 1600px) {
-    * {
-        font-size: 0.9rem;
-    }
 
-    #title {
-        font-size: 3rem;
-    }
-
-    #meCard img {
-        width: 5rem;
-    }
-
-    #meCard h1 {
-        font-size: 0.8rem;
-    }
-
-    #meCard p {
-        font-size: 0.6rem;
-    }
-
-    .infoCard h2 {
-        font-size: 0.8rem;
-    }
-
-    .infoCard p {
-        font-size: 0.6rem;
-    }
-
-    .languages {
-        width: 60%;
-    }
-
-    .languages .level h1 {
-        font-size: 0.8rem;
-    }
-
-    .languages .level p {
-        font-size: 0.8rem;
-    }
-
-    #programming .level h2 {
-        font-size: 1rem;
-    }
+#profile img {
+    width: 20%;
+    border-radius: 50%;
+    margin: 20px;
     
-    .card {
-        max-width: 17rem;
-        max-height: 10rem;
+}
 
+#name {
+    font-size: 1.5rem;
+    font-weight: 900;
+    margin-bottom: 10px;
+    color: var(--accent-color);
+}
+
+#profile p {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--text-color-light);
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-inline: 60px;
+}
+
+#infos {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.info p {
+    color: var(--text-color-light);
+}
+
+#langues {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+    align-self: center;
+    
+}
+
+.langue {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.langue p {
+    border: solid 0.2rem var(--accent-color);
+    border-radius: 50%;
+    width: 60px; /* Définissez une largeur fixe */
+    height: 60px; /* Définissez une hauteur fixe égale à la largeur */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0; /* Assurez-vous qu'il n'y a pas de marge qui pourrait affecter la forme */
+}
+
+.langue h3 {
+    text-align: center;
+}
+
+
+
+/* 
+Keyframes
+*/
+
+@keyframes blink {
+    from, to {
+        opacity: 0;
     }
-
-    .card .description {
-        font-size: 0.7rem;
+    50% {
+        opacity: 1;
     }
-
 }
